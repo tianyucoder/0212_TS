@@ -51,4 +51,56 @@
 	console.log(booksName.zhao);
 	console.log(booksName.qian);
 
+	//any
+	let w1:any
+	let arr01:any[] = [1,2,3,'asd',true]
+	w1 = 1
+	w1 ='asd'
+	w1 = []
+
+	//void
+	//我们一般不将一个变量类型设为void，因为没意义
+	let v:void //变量v以后只能存储：undefined、null
+	v = undefined
+	v = null
+	function demo(a:string):void{
+		console.log(1);
+		//return 1 //error
+	}
+
+	//object
+	function fn2(a:object){
+		console.log('fn2');
+	}
+	fn2({})
+	fn2([])
+	fn2(()=>{})
+
+	//联合类型
+	//定义一个函数，接收一个参数，该参数可能是数值、字符串，返回该参数的字符串形式
+	function myToString(x:number | string){
+		return x.toString()
+	}
+	console.log(myToString(123));
+	console.log(myToString('atguigu'));
+
+	//类型断言
+	//定义一个函数，接收一个参数，该参数可能是数值、字符串
+	//若参数是字符串，则返回字符串长度
+	//若参数是数值，则返回数值的位数，例如1299，返回的就是4
+	function getLength(x:number | string){
+		if((<string>x).length){ //类型断言
+			return (x as string).length //类型断言
+		}else{
+			return x.toString().length
+		}
+	}
+	console.log(getLength('atguigu'));
+	console.log(getLength(999));
+
+	//类型推断(推导)
+	let y = 1
+	y = 9
+	
+
 })()
