@@ -3,6 +3,7 @@
 	class Person{
 		firstName:string
 		lastName:string
+		static phone:string = '13988999988'
 
 		constructor(firstName,lastName){
 			this.firstName = firstName
