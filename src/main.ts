@@ -1,1 +1,1 @@
-import './01_hello_ts/hello'
+import './02_data_type/data_type'
